@@ -3,7 +3,6 @@ pos_in_list = 0  # Переменная положения элемента в �
 max_last_value = list_numbers[pos_in_list]  # Переменная значения элемента в списке
 # TODO Оформить решение
 for pos, value in enumerate(list_numbers):  # Перебор пар Позиция - Значение
-    max_last_value = list_numbers[pos_in_list]
     if value >= max_last_value:  # Находим позицию и значение последнего максимального элемента
         pos_in_list = pos
         max_last_value = list_numbers[pos_in_list]
