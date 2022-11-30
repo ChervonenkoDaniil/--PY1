@@ -7,7 +7,7 @@ def get_count_char(str_):
         if letter.isalpha():
             dict_[letter] = dict_.get(letter, counter) + 1
 
-    return dict
+    return dict_
 
 # TODO посчитать количество каждой буквы в строке в аргументе str_
 
