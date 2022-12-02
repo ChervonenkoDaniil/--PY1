@@ -1,6 +1,6 @@
 def delete(list_, index=None):
     # используем cпособ list comprehension
-    list_ = (list_[:-1] if index is None else list_[:index] + list_[index + 1:])
+    list_ = (list_[:-1] if index is None else list_[:index] + list_[index + 1:])  # list_[-1] по условию задачи
     return list_
 
 
