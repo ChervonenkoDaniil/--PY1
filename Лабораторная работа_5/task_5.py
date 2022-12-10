@@ -1,9 +1,9 @@
-from random import choice
-import string
+from random import sample
+from string import ascii_uppercase, ascii_lowercase, digits
 
 
 def get_random_password(n=8) -> str:
-    return ''.join([choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(0, n+1)])
+    return ''.join(sample(list(ascii_uppercase) + list(ascii_lowercase) + list(digits), n))
 
 
 print(get_random_password())
