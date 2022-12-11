@@ -1,4 +1,4 @@
-from random import choice
+from random import randint
 
 
 def get_unique_list_numbers(start=-10, stop=10, n=15) -> list[int]:  # Добавлено для универсальности решения
