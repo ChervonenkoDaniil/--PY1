@@ -4,21 +4,13 @@ import json
 INPUT_FILE = "input.csv"
 
 
-# Очень долго думал, но не придумал, зачем функция воспринимает аргумент разделителя, но, по заданию добавил
+# Нашел применение для new_line, удалил лишние строки
 def csv_to_list_dict(filename, delimiter=',', new_line='\n') -> list[dict]:
-    # Получаем данные, форматируем для дальнейшей работы
+    # Получаем список заголовков, форматируем для дальнейшей работы (с удалением \n)
     with open(filename, 'r') as f:
-        headers = f.readline().split(delimiter)
-        data = f.readlines()
-        data = [i.split(delimiter) for i in data]
-    # Вероятнее всего, для удаления из конца строки, но не понял, как реализовать
-    headers[-1] = headers[-1].strip()
-
-    for line in data:
-        line[-1] = line[-1].strip()
-    # Объединяем в словарь
-    dict_ = [dict(zip(headers, [i for i in line])) for line in data]
-    return dict_
+        headers = f.readline().strip(new_line).split(delimiter)
+        # Выводим словарь для экспорта
+        return [dict(zip(headers, line.strip(new_line).split(delimiter))) for line in f.readlines()]
 
 
 print(json.dumps(csv_to_list_dict(INPUT_FILE), indent=4))
